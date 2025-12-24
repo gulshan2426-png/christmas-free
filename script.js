@@ -22,3 +22,23 @@ function createSnowflake() {
     }, 5100);
 }
 setInterval(createSnowflake, 150);
+// --- Music Logic ---
+const music = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-toggle');
+
+// Set volume to 30% for a chill, low-power vibe
+if (music) {
+    music.volume = 0.3; 
+}
+
+if (musicBtn) {
+    musicBtn.addEventListener('click', () => {
+        if (music.paused) {
+            music.play();
+            musicBtn.innerHTML = "🔊 Music ON";
+        } else {
+            music.pause();
+            musicBtn.innerHTML = "🔈 Music OFF";
+        }
+    });
+}
