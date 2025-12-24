@@ -80,3 +80,27 @@ h1 {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
 }
+/* Specific layout for the index page */
+.message-box {
+    margin: 20px 0;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+.message-box strong {
+    color: #e6e6fa; /* Lavender highlight */
+    font-size: 1.4rem;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.music-toggle {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 0.9rem;
+}
