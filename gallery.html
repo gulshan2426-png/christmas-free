@@ -3,24 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Christmas Gallery 🎄</title>
+  <title>Our Memories 💜</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Christmas Gallery 🎄</h1>
+  <div class="container gallery-container">
+    <h1>Our Special Moments ✨</h1>
 
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1543589077-47d81606c1bf" />
-      <img src="https://images.unsplash.com/photo-1512389098783-66b81f86e199" />
-      <img src="https://images.unsplash.com/photo-1608889175112-b33f9f3c1c4a" />
-      <img src="https://images.unsplash.com/photo-1545580492-8859ba8323cb" />
+    <div class="gallery-grid">
+      <div class="photo-card">
+        <img src="https://images.unsplash.com/photo-1543589077-47d81606c1bf" alt="Memory 1"/>
+        <p class="caption">Our First Date ❤️</p>
+      </div>
+      
+      <div class="photo-card">
+        <img src="https://images.unsplash.com/photo-1512389098783-66b81f86e199" alt="Memory 2"/>
+        <p class="caption">That Beautiful Smile ✨</p>
+      </div>
+      
+      <div class="photo-card">
+        <img src="https://images.unsplash.com/photo-1608889175112-b33f9f3c1c4a" alt="Memory 3"/>
+        <p class="caption">Favorite Memory 📸</p>
+      </div>
+      
+      <div class="photo-card">
+        <img src="https://images.unsplash.com/photo-1545580492-8859ba8323cb" alt="Memory 4"/>
+        <p class="caption">Forever To Go ♾️</p>
+      </div>
     </div>
 
-    <br /><br />
-    <a href="index.html" class="button">Back to Message 🎄</a>
+    <div class="button-group">
+      <a href="index.html" class="button">Back to Home 🏠</a>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.innerHTML = "❤️";
+        heart.style.position = "fixed";
+        heart.style.bottom = "-20px";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.fontSize = "20px";
+        heart.style.opacity = "0.7";
+        heart.style.transition = "transform 4s linear, opacity 4s linear";
+        document.body.appendChild(heart);
+        setTimeout(() => {
+            heart.style.transform = `translateY(-${window.innerHeight + 50}px) rotate(${Math.random() * 360}deg)`;
+            heart.style.opacity = "0";
+        }, 100);
+        setTimeout(() => { heart.remove(); }, 4000);
+    }
+    setInterval(createHeart, 400);
+  </script>
 </body>
 </html>
