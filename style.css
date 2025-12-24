@@ -4,7 +4,7 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh; /* Changed from height to min-height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@ body {
     animation: gradientBG 10s ease infinite;
     color: white;
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+    overflow-y: auto; /* Changed from hidden to auto */
 }
 
 /* Moving background animation */
@@ -127,7 +127,19 @@ h1 {
     object-fit: cover;
     filter: sepia(20%); /* Gives a warm, vintage feel */
 }
+/* Fix for the gallery scrolling */
+.gallery-container {
+    max-height: none !important;
+    padding-top: 40px;
+    padding-bottom: 80px; /* Space for the last photo */
+}
 
+.gallery-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Space between photos */
+    margin-top: 30px;
+}
 /* Make every other photo tilt a different way */
 .photo-card:nth-child(even) { transform: rotate(3deg); }
 .photo-card:nth-child(odd) { transform: rotate(-3deg); }
