@@ -119,9 +119,10 @@ h1 {
 
 .photo-card img {
     width: 100%;
-    height: 180px; /* Bigger photos */
+    height: 350px; /* Increased height to fit more of the person */
     object-fit: cover;
-    filter: sepia(20%); /* Gives a warm, vintage feel */
+    object-position: top; /* This forces the image to show the face/top part */
+    filter: sepia(10%); /* Subtle warm feel */
 }
 /* Fix for the gallery scrolling */
 .gallery-container {
